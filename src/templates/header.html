@@ -1,0 +1,18 @@
+<div class="header">
+
+    <div class='header_logo'>
+        <a href="">LOGO</a>
+    </div>
+
+    {% if user.is_authenticated %}
+        <div class='header_user_info'>
+            <p>Привет, <a href="">{{user.username}}</a></p>
+            <a class='btn_logout' href="">ВЫЙТИ</a>
+        </div>
+    {% else %}
+    <div class="header_menu">
+        <a href="">ВОЙТИ</a>
+        <a href="">РЕГИСТРАЦИЯ</a>
+    </div>
+    {% endif %}
+</div>

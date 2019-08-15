@@ -1,17 +1,18 @@
 <div class="header">
 
     <div class='header_logo'>
-        <a href="">LOGO</a>
+        <a href="{% url 'home:home_page' %}">LOGO</a>
     </div>
 
     {% if user.is_authenticated %}
         <div class='header_user_info'>
             <p>Привет, <a href="">{{user.username}}</a></p>
-            <a class='btn_logout' href="">ВЫЙТИ</a>
+            <a class='new' href="{% url 'home:new_page' %}">новое объявление</a>
+            <a class='btn_logout' href="{% url 'home:auth_logout:exit' %}">выйти</a>
         </div>
     {% else %}
     <div class="header_menu">
-        <a href="">ВОЙТИ</a>
+        <a href="{% url 'home:login:login_page' %}">ВОЙТИ</a>
         <a href="">РЕГИСТРАЦИЯ</a>
     </div>
     {% endif %}

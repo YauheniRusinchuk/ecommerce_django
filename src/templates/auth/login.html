@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class='login_container'>
+        <p>Войдите в аккаунт.</p>
+        <form method="POST">{% csrf_token %}
+            <label>ЛОГИН</label>
+            <input type='text' name='login' placeholder="...." />
+            <label>ПАРОЛЬ</label>
+            <input type="password" name='password' placeholder="....">
+            <button type='submit'>ЛОГИН</button>
+        </form>
+    </div>
+{% endblock %}
